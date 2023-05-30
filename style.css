@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+@font-face {
+    font-family:'Montserrat' ;
+    src: url(fonts/Montserrat-Regular.ttf);
+}
+
+body{
+    background-color: var(--fons1);
+    font-family: 'Montserrat';
+
+}
+
+header {
+    position: relative;
+}
+
+.video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+    
+
+.container1{
+    background-color: var(--fons1) ;
+    display:grid;
+    grid-template-columns: 2fr auto 2fr ;
+    grid-template-rows: 1fr 1fr;
+}
+img{
+    grid-column: 2;
+    display: grid;
+    justify-self: center;
+    margin-top: 10px;
+    width: 100%;
+    
+}
+
+input{
+    grid-column: 2;
+    grid-row: 2;
+    padding-left: 15px;
+    width: 80%;
+    height: 40px;
+    justify-self: center;
+    align-self: center;
+    z-index: 1;
+}
+
+.logo{
+    width: min(400px, 70%);
+
+    z-index: 1;
+}
+
+
+
+.container2{
+    margin: 20px;
+
+}
+
+
+.durada{
+    background-color: var(--fons1);
+    color: var(--taronj);
+    display:grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr;
+    align-self: center;
+    height: 30px;
+    padding: 0px 50px;
+}
+
+.text1{
+    grid-column: 1;
+}
+.text2{
+    grid-column: 3;
+}
+
+
+.item{
+    /* margin: 20px; */
+    display:grid;
+    grid-template-columns: 50px auto 50px 50px;
+    grid-template-rows: 1fr;
+}
+
+.item:nth-child(odd){
+    background-color: var(--fons2);
+}
+
+.item:nth-child(even){
+    background-color: var(--fons3) ;
+}
+
+.item:hover{
+    background-color: var(--fhover);
+    color: var(--verde);
+}
+
+.play{
+    width: 100% ; 
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+.play, .title:hover{
+    cursor: pointer;
+}
+
+.title{
+    grid-column: 2;
+    grid-row: inherit;
+    align-self: center;
+}
+
+.min{
+    grid-column: 3;
+    grid-row: inherit;
+    align-self: center;
+}
+
+.heart{
+    width: 80%;
+    grid-column: 4;
+    grid-row: inherit;
+    align-self: center;
+    justify-self: center;
+    transition: 250ms;
+}
+
+.heart:hover{
+    transform: scale(110%);
+    fill: var(--rosa);
+    cursor: pointer;
+
+}
+
+.container3{
+    display:grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));; 
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-flow: dense;
+    
+}
+
+.album{
+    grid-column: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+
+.albtext{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--blanc);
+    grid-column: auto;
+}
+
+
+
+.albimg:hover{
+    transform: scale(1.05);
+    -webkit-transform:scale(1.05);
+    -o-transform: scale(1.05);
+    transition: 400ms;
+    cursor: pointer;
+    -webkit-filter: hue-rotate(90deg) contrast(76%) brightness(38%) grayscale(13%) saturate(78%) /*hue-rotate(178deg)*/ sepia(30%)  invert(7%) blur(1px);
+}
+
+
+.album:nth-child(3){
+    grid-column: span 2;
+    grid-row:  span 2 ;
+}
+
+.album:nth-child(5){
+    grid-column: span 2;
+    grid-row:  span 2 ;
+}
+
+
+:root{
+    --fons1: #353633;
+    --fons2: #F5F5F5;
+    --fons3: #DCDCDC;
+    --fhover:#696969;
+    --verde: #98BB93;
+    --blanc: #FFFFFF;
+    --rosa:  #ff4d6d;
+    --taronj:#E38158;
+}
+
+
+@media (max-width: 768px) {
+    .video {
+      display: none; 
+    }
+    
+    .container1 {
+        background-image: url('img/bruce-springsteen.webp');
+        background-size: cover;
+       
+      }
+}
